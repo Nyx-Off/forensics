@@ -1,6 +1,6 @@
 # TP1 - Analyse Forensique
 
-Ce dépôt contient le rendu du TP d'analyse forensique, organisé en deux parties distinctes.
+Ce dépôt contient le rendu du TP d'analyse forensique, organisé en trois parties distinctes.
 
 ---
 
@@ -27,10 +27,25 @@ Analyse forensique d'un dump mémoire RAM utilisant Volatility Framework.
 
 **Contenu :**
 - 📄 [RAPPORT_DUMP_RAM.md](./Partie2_Dump_RAM/RAPPORT_DUMP_RAM.md) - Rapport d'analyse du dump mémoire
-- 📄 [COMMANDE_DUMP_RAM.md](./Partie2_Dump_RAM/COMMANDE_DUMP_RAM.md) - Commandes Volatility utilisées
+- 📄 [COMMANDES_DUMP_RAM.md](./Partie2_Dump_RAM/COMMANDES_DUMP_RAM.md) - Commandes Volatility utilisées
 - 📁 [results/](./Partie2_Dump_RAM/results/) - Résultats des analyses Volatility
 
 **Résumé :** Investigation mémoire pour identifier les processus, connexions réseau, artefacts malveillants et autres IOCs présents dans le dump RAM.
+
+---
+
+### [Partie 3 - Copie Bit-à-Bit de Disque](./Partie3_copie_disque/)
+
+Acquisition forensique d'une partition disque avec copie bit-à-bit et vérification d'intégrité.
+
+**Contenu :**
+- 📄 [RAPPORT_COPIE_DISQUE.md](./Partie3_copie_disque/RAPPORT_COPIE_DISQUE.md) - Rapport forensique complet de l'acquisition
+- 📄 [GUIDE_COPIE_DISQUE.md](./Partie3_copie_disque/GUIDE_COPIE_DISQUE.md) - Guide pratique avec tutoriel et commandes
+- 📁 [images/](./Partie3_copie_disque/images/) - Image bit-à-bit de la partition (sda1.img - 976 Mo)
+- 📁 [hashes/](./Partie3_copie_disque/hashes/) - Hashes MD5/SHA1/SHA256 pour vérification d'intégrité
+- 📁 [logs/](./Partie3_copie_disque/logs/) - Métadonnées d'acquisition et logs
+
+**Résumé :** Création d'une image forensique bit-à-bit de la partition EFI (/dev/sda1) avec dd, calcul de hashes cryptographiques (MD5, SHA1, SHA256) et vérification d'intégrité complète. L'image est une copie exacte vérifiée pour analyse forensique.
 
 ---
 
@@ -43,9 +58,17 @@ Analyse forensique d'un dump mémoire RAM utilisant Volatility Framework.
 - Reverse engineering
 
 **Partie 2 :**
+- LiME (Linux Memory Extractor)
 - Volatility Framework
 - Analyse forensique mémoire
 - Investigation d'incidents
+
+**Partie 3 :**
+- dd (disk dump)
+- Copie bit-à-bit (disk imaging)
+- Hashing cryptographique (MD5, SHA1, SHA256)
+- Vérification d'intégrité forensique
+- Chaîne de traçabilité
 
 ---
 
@@ -61,5 +84,15 @@ Voir le fichier [LICENSE](./LICENSE) pour plus d'informations.
 
 ---
 
-**Date:** 2025-12-01
-**Environnement:** Kali Linux
+**Date de dernière mise à jour:** 2025-12-02
+**Environnement:** Kali Linux 6.16.8+kali-amd64
+**Auteur:** nyx
+
+## 📊 Statistiques du TP
+
+| Partie | Fichiers | Taille totale | Durée |
+|--------|----------|---------------|-------|
+| **Partie 1** | 5 documents | ~120 Ko | ~3h |
+| **Partie 2** | 2 documents + dump 12 Go | ~12 Go | ~20 min |
+| **Partie 3** | 2 documents + image 976 Mo | ~976 Mo | ~20 min |
+| **TOTAL** | **9 documents** | **~13 Go** | **~4h** |
